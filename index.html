@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Analógico</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        // Aplica o tema salvo antes de desenhar a página (evita "piscar" o tema errado)
+        try {
+            let temaSalvo = localStorage.getItem('tema');
+            if (temaSalvo === 'claro' || temaSalvo === 'escuro') {
+                document.documentElement.dataset.tema = temaSalvo;
+            }
+        } catch (e) {}
+    </script>
+</head>
+<body>
+    <button class="botao-tema" type="button" aria-label="Mudar para tema claro" title="Mudar para tema claro">
+        <span aria-hidden="true">☀️</span>
+    </button>
+
+    <main>
+        <h1>Relógio Analógico</h1>
+
+        <div class="relogio" role="img" aria-label="Relógio analógico">
+            <div class="riscos">
+                <div class="risco" style="--i: 0"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 1"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 2"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 3"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 4"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 5"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 6"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 7"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 8"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 9"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 10"><div class="ponto"></div></div>
+                <div class="risco" style="--i: 11"><div class="ponto"></div></div>
+            </div>
+            <div class="ponteiros">
+                <div class="p p_h"></div>
+                <div class="p p_m"></div>
+                <div class="p p_s"></div>
+                <div class="encaixe"></div>
+            </div>
+        </div>
+
+        <p class="digital">
+            <span class="sr-only">Hora atual: </span>
+            <time>--:--:--</time>
+        </p>
+    </main>
+
+    <footer>Criado por Valdirene Bombini</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
